@@ -1,0 +1,41 @@
+// font size
+$fontSize : 20px;
+$lor : red;
+$fonColor: lightgrey;
+
+// div {
+//   box-sizing: border-box;
+// }
+// https://www.youtube.com/watch?v=6l3ZSOQKE5g
+
+
+body {
+  font-size: $fontSize;
+  background-color: $fonColor;
+
+
+
+  header {
+    width: 1150px;
+    height: 150px;
+    background-color: $lor;
+    margin: 0 auto;
+    border-radius: 15px;
+    
+    // .topBar {
+    //   background-color: blue;
+    //   height: 75px;
+    // }
+
+    // .secondBar {
+    //   background-color: white;
+    //   height: 75px;
+    // }
+
+  }
+
+
+
+}
+
+
