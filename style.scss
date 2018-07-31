@@ -1,12 +1,12 @@
 // font size
 $fontSize : 20px;
 $lor : red;
-$fonColor: lightgrey;
+$fonColor: #e9e8e4;
 
-// div {
-//   box-sizing: border-box;
-// }
-// https://www.youtube.com/watch?v=6l3ZSOQKE5g
+div {
+  box-sizing: border-box;
+}
+
 
 
 body {
@@ -21,16 +21,97 @@ body {
     background-color: $lor;
     margin: 0 auto;
     border-radius: 15px;
-    
-    // .topBar {
-    //   background-color: blue;
-    //   height: 75px;
-    // }
+    overflow: hidden;
+    text-align: center;
+    .topBar {
+      background-color: #4d75a3;
+      height: 75px;
+      .leftTopBarMenu {
+        line-height: 75px;
+        nav {
+          text-align: center;
+          vertical-align: middle;
+          ul {
+            padding: 0px;
+            margin: 0px;
+            display: block;
+            li {         
+              float: left;
+              display: block;
+              padding: 0px 28px 0px 28px;
+              border-right: 1px solid #38546d;
+              position: relative;
+              .logoTopBar {
+                padding: 0px 35px 0px 10px;
+              }
+              #notiCounter {
+                border-radius: 2px;
+                background-color: #ff6161;
 
-    // .secondBar {
-    //   background-color: white;
-    //   height: 75px;
-    // }
+                font-size: 12px;
+                font-weight: bold;
+                color: #f9f9f9;
+                width: 16px;
+                line-height: 16px;
+                margin: 0 auto;
+                position: absolute;
+
+                top: 0;
+                margin-top: 20%;
+                margin-left: 20%;
+              }
+            }
+          }
+        }
+      }
+
+      .rightTopBarMenu {
+        // line-height: 75px;
+        float: right;
+        line-height: 75px;
+        font-weight: bold;
+        color: #f9f9f9;
+      }
+      nav {
+        text-align: center;
+        vertical-align: middle;
+        ul {
+          padding: 0px;
+          margin: 0px;
+          display: block;
+          li {         
+            float: left;
+            display: block;
+            padding: 0px 28px 0px 28px;
+            border-right: 1px solid #38546d;
+            position: relative;
+              .avatar {
+              vertical-align: middle;
+              width: 40px;
+              height: 40px;
+              border: 1px solid #f9f9f9;
+              border-radius: 50%;
+              margin: 0px 10px 0px 20px;
+              }
+
+              button {
+                // vertical-align: middle;
+                // width: 40px;
+                // height: 40px;
+                // border: 1px solid #f9f9f9;
+                border-radius: 0 0 50% 50%;
+                // margin: 0px 10px 0px 20px;
+                }
+          }
+        }
+      }
+
+    }
+
+    .secondBar {
+      background-color: white;
+      height: 75px;
+    }
 
   }
 

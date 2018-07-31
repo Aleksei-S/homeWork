@@ -1,6 +1,11 @@
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-size: 20px;
-  background-color: lightgrey;
+  background-color: #e9e8e4;
 }
 
 body header {
@@ -9,5 +14,98 @@ body header {
   background-color: red;
   margin: 0 auto;
   border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+body header .topBar {
+  background-color: #4d75a3;
+  height: 75px;
+}
+
+body header .topBar .leftTopBarMenu {
+  line-height: 75px;
+}
+
+body header .topBar .leftTopBarMenu nav {
+  text-align: center;
+  vertical-align: middle;
+}
+
+body header .topBar .leftTopBarMenu nav ul {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+}
+
+body header .topBar .leftTopBarMenu nav ul li {
+  float: left;
+  display: block;
+  padding: 0px 28px 0px 28px;
+  border-right: 1px solid #38546d;
+  position: relative;
+}
+
+body header .topBar .leftTopBarMenu nav ul li .logoTopBar {
+  padding: 0px 35px 0px 10px;
+}
+
+body header .topBar .leftTopBarMenu nav ul li #notiCounter {
+  border-radius: 2px;
+  background-color: #ff6161;
+  font-size: 12px;
+  font-weight: bold;
+  color: #f9f9f9;
+  width: 16px;
+  line-height: 16px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  margin-top: 20%;
+  margin-left: 20%;
+}
+
+body header .topBar .rightTopBarMenu {
+  float: right;
+  line-height: 75px;
+  font-weight: bold;
+  color: #f9f9f9;
+}
+
+body header .topBar nav {
+  text-align: center;
+  vertical-align: middle;
+}
+
+body header .topBar nav ul {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+}
+
+body header .topBar nav ul li {
+  float: left;
+  display: block;
+  padding: 0px 28px 0px 28px;
+  border-right: 1px solid #38546d;
+  position: relative;
+}
+
+body header .topBar nav ul li .avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f9f9f9;
+  border-radius: 50%;
+  margin: 0px 10px 0px 20px;
+}
+
+body header .topBar nav ul li button {
+  border-radius: 0 0 50% 50%;
+}
+
+body header .secondBar {
+  background-color: white;
+  height: 75px;
 }
 /*# sourceMappingURL=style.css.map */
