@@ -93,19 +93,178 @@ body header .topBar nav ul li {
 
 body header .topBar nav ul li .avatar {
   vertical-align: middle;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #f9f9f9;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #f9f9f9;
   border-radius: 50%;
   margin: 0px 10px 0px 20px;
 }
 
-body header .topBar nav ul li button {
-  border-radius: 0 0 50% 50%;
+body header .topBar nav ul li .arrow-btn {
+  margin-top: 20%;
+  border: 5px solid transparent;
+  border-top: 5px solid #f9f9f9;
+  width: 0;
+  height: 0;
+  float: right;
 }
 
 body header .secondBar {
   background-color: white;
   height: 75px;
+  line-height: 75px;
+}
+
+body header .secondBar nav {
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+body header .secondBar nav ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+body header .secondBar nav ul li {
+  float: left;
+  display: block;
+  padding: 0px 28px 0px 28px;
+}
+
+body header .secondBar nav ul .active div {
+  height: 75px;
+  -webkit-box-shadow: inset 0px -5px 0px #4d75a3;
+          box-shadow: inset 0px -5px 0px #4d75a3;
+}
+
+body .profile {
+  width: 1150px;
+  height: 200px;
+  background-color: #f9f9f9;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .profile .profileStatusColumn {
+  width: 480px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .profile .profileStatusColumn img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin: 0 25px 0 50px;
+}
+
+body .profile .profileStatusColumn .profileTitle {
+  border-right: 1px solid #e5e5e5;
+}
+
+body .profile .profileStats {
+  width: 400px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .profile .profileStats .statsItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .profile .profileStats .statsItems h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+body .profile .profileStats .statsItems p {
+  padding: 0px;
+  margin: 0px;
+}
+
+body .profile .profileButtons {
+  width: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .profile .profileButtons .fillBtn {
+  background-color: #4d75a3;
+  border-radius: 5px;
+  width: 185px;
+  height: 50px;
+  margin: 5px 0 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: #f9f9f9;
+}
+
+body .profile .profileButtons .generalBtn {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  width: 185px;
+  height: 50px;
+  border: 1px solid #38546d;
+  margin: 5px 0 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  color: #4d75a3;
 }
 /*# sourceMappingURL=style.css.map */
