@@ -284,9 +284,11 @@ body .activityFeed .col {
   overflow: hidden;
   background-color: white;
   height: 500px;
-  width: calc( ( 100% - 100px ) / 3);
+  width: calc((100% - 100px) / 3);
   border-radius: 15px;
   position: relative;
+  /* Customize Thumb */
+  /* Customize Track */
 }
 
 body .activityFeed .col .titleFeed {
@@ -538,7 +540,123 @@ body .activityFeed .col .titleChat .titleBtn img {
 }
 
 body .activityFeed .col .chat {
-  background-color: #97a4b1;
+  overflow: scroll;
+}
+
+body .activityFeed .col .chat .message .textMesssageReceived {
+  display: inline-block;
+  position: relative;
+  background-color: #f2f4f6;
+  margin-left: 25px;
+  max-width: 70%;
+  border-radius: 15px;
+}
+
+body .activityFeed .col .chat .message .textMesssageReceived p {
+  margin: 0;
+  text-align: justify;
+  padding: 10px 20px 10px 20px;
+}
+
+body .activityFeed .col .chat .message .textMesssageReceived:before {
+  content: "";
+  position: absolute;
+  z-index: 134223;
+  bottom: 0px;
+  height: 15px;
+  border-right: 10px solid #f2f4f6;
+  border-bottom-right-radius: 10px 7px;
+  border-bottom-left-radius: 5px 2px;
+  -webkit-transform: translate(-5px, -2px);
+          transform: translate(-5px, -2px);
+}
+
+body .activityFeed .col .chat .message .textMesssageReceived:after {
+  content: "";
+  position: absolute;
+  z-index: 1231312;
+  bottom: 0px;
+  width: 10px;
+  height: 25px;
+  background: #fff;
+  border-bottom-right-radius: 16px 20px;
+  -webkit-transform: translate(-10px, -2px);
+          transform: translate(-10px, -2px);
+}
+
+body .activityFeed .col .chat .message .dateMesssage {
+  display: inline-block;
+  width: 100%;
+}
+
+body .activityFeed .col .chat .message .textMesssageSent {
+  display: inline-block;
+  position: relative;
+  background-color: #ebf4fa;
+  margin-right: 25px;
+  float: right;
+  max-width: 70%;
+  border-radius: 15px;
+}
+
+body .activityFeed .col .chat .message .textMesssageSent p {
+  margin: 0;
+  text-align: justify;
+  padding: 10px 20px 10px 20px;
+}
+
+body .activityFeed .col .chat .message .textMesssageSent:before {
+  content: "";
+  position: absolute;
+  z-index: 134223;
+  bottom: 0px;
+  height: 15px;
+  left: 100%;
+  border-left: 10px solid #ebf4fa;
+  border-bottom-left-radius: 10px 7px;
+  border-bottom-right-radius: 5px 2px;
+  -webkit-transform: translate(-5px, -2px);
+          transform: translate(-5px, -2px);
+}
+
+body .activityFeed .col .chat .message .textMesssageSent:after {
+  content: "";
+  position: absolute;
+  z-index: 1231312;
+  left: 100%;
+  bottom: 0px;
+  width: 10px;
+  height: 25px;
+  background: #fff;
+  border-bottom-left-radius: 20px 16px;
+  -webkit-transform: translate(0px, -2px);
+          transform: translate(0px, -2px);
+}
+
+body .activityFeed .col #ex3::-webkit-scrollbar {
+  width: 16px;
+  background-color: #cccccc;
+}
+
+body .activityFeed .col #ex3::-webkit-scrollbar-thumb {
+  background-color: #b03c3f;
+  border-radius: 10px;
+  width: 16px;
+}
+
+body .activityFeed .col #ex3::-webkit-scrollbar-thumb:hover {
+  background-color: #bf4649;
+  border: 1px solid #333333;
+}
+
+body .activityFeed .col #ex3::-webkit-scrollbar-thumb:active {
+  background-color: #a6393d;
+  border: 1px solid #333333;
+}
+
+body .activityFeed .col #ex3::-webkit-scrollbar-track {
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
 body .activityFeed .col:nth-child(3n-1) {
