@@ -246,8 +246,9 @@ body {
 
     .col {
       overflow: hidden;
+
       background-color: white;
-      height: 500px;
+      height: 100%;
       width: calc((100% - 100px) / 3);
       border-radius: 15px;
       position: relative;
@@ -317,6 +318,9 @@ body {
         width: 100%;
         display: flex;
         justify-content: center;
+        background-color: #4d75a3;
+        overflow: hidden;
+        z-index: 9999999;
       }
 
       .folowers {
@@ -435,23 +439,24 @@ body {
       }
 
       .chat {
-        overflow: scroll;
+
+        overflow: auto;
+        height: 100%;
         .message {
           .textMesssageReceived {
             display: inline-block;
             position: relative;
             background-color: #f2f4f6;
             margin-left: 25px;
+
             // margin: 1px 10px 1px 25px;
             max-width: 70%;
             border-radius: 15px;
-
             p {
               margin: 0;
               text-align: justify;
               padding: 10px 20px 10px 20px;
             }
-
           }
           .textMesssageReceived:before {
             content:"";
@@ -527,58 +532,48 @@ body {
 
 
         }
+
+
+   
+
       }
 
 
+    
+    .chat::-webkit-scrollbar {
+      width: 10px;
 
-    //   .chat::-webkit-scrollbar {
-    //     width: 100px;
-    //   }
-
-
-    //   .chat::-webkit-scrollbar-track {
-    //     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    //     border-radius: 10px;
-    //   }
-
-      
-    //   .chat::-webkit-scrollbar-thumb {
-    //     box-shadow: inset 0 0 10px 10px red;
-    //     border: solid 3px;
-    //             width: 100%;
-    //     height: 100%;
+    }
+    
+    .chat::-webkit-scrollbar-thumb {
+      background: #e5e5e5e3;
+      border-radius: 10px;
+    }
+  
+    // .chat:after {
+    //   content: '';
+    //   width: 0;
+    //   height: 0;
+    //   visibility: hidden;
+    //   opacity: 0;
+    //   display: block;
+    //   clear: both;
+    //   position: relative;
+    //   font-size: 0px;
+    //   line-height: 0px;
     // }
-
-    #ex3::-webkit-scrollbar {
-      width: 16px;
-      background-color: #cccccc;
-  }
-  /* Customize Thumb */
-  #ex3::-webkit-scrollbar-thumb {
-      background-color: #b03c3f;
-      border-radius: 10px;
-      width: 16px;
-  }
-  #ex3::-webkit-scrollbar-thumb:hover {
-      background-color: #bf4649;
-      border: 1px solid #333333;
-  }
-  #ex3::-webkit-scrollbar-thumb:active {
-      background-color: #a6393d;
-      border: 1px solid #333333;
-  }
-  /* Customize Track */
-   #ex3::-webkit-scrollbar-track {
-      border: 1px solid gray;
-      border-radius: 10px;
-      // box-shadow: 0 0 6px gray inset;
-   }
-
-
-
-
-
-
+    // .footerFeeds:after {
+    //   content: '';
+    //   width: 0;
+    //   height: 0;
+    //   visibility: hidden;
+    //   opacity: 0;
+    //   display: block;
+    //   clear: both;
+    //   position: relative;
+    //   font-size: 0px;
+    //   line-height: 0px;
+    // }
 
 
 
@@ -593,5 +588,67 @@ body {
       margin-right: 50px;
     }
   }
+
+
+  .dialogues {
+    width: 1150px;
+    height: 812px;
+    // background-color: #f9f9f9;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 15px;
+    position: relative;
+    // overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    .listUser {
+      width: 335px;
+      height: 100%;
+      // background-color: #ff6161;
+      .headerlistUser {
+        width: inherit;
+        display:  table-cell;
+        height:  100px;
+        vertical-align:  middle;
+        border-right: 1px solid yellow;
+        border-bottom: 1px solid yellow;
+        p {
+          float: left;
+          padding: 0px;
+          margin: 0px;
+        }
+        .leftIcons {
+          float: right;
+        }
+      }
+
+
+      .userDialogList {
+        width: inherit;
+        display:  table-cell;
+        height:  100px;
+        border-right: 1px solid yellow;
+        border-bottom: 1px solid yellow;
+
+      }
+
+
+
+    }
+
+
+
+    .dialog {
+      width: 100%;
+      height: 100%;
+      // display: block;
+      // background-color: #5f5858;
+    }
+
+
+  }
+
+
 }
+
 

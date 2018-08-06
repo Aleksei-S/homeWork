@@ -283,12 +283,10 @@ body .activityFeed {
 body .activityFeed .col {
   overflow: hidden;
   background-color: white;
-  height: 500px;
+  height: 100%;
   width: calc((100% - 100px) / 3);
   border-radius: 15px;
   position: relative;
-  /* Customize Thumb */
-  /* Customize Track */
 }
 
 body .activityFeed .col .titleFeed {
@@ -379,6 +377,9 @@ body .activityFeed .col .footerFeeds {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #4d75a3;
+  overflow: hidden;
+  z-index: 9999999;
 }
 
 body .activityFeed .col .folowers {
@@ -540,7 +541,8 @@ body .activityFeed .col .titleChat .titleBtn img {
 }
 
 body .activityFeed .col .chat {
-  overflow: scroll;
+  overflow: auto;
+  height: 100%;
 }
 
 body .activityFeed .col .chat .message .textMesssageReceived {
@@ -633,34 +635,70 @@ body .activityFeed .col .chat .message .textMesssageSent:after {
           transform: translate(0px, -2px);
 }
 
-body .activityFeed .col #ex3::-webkit-scrollbar {
-  width: 16px;
-  background-color: #cccccc;
+body .activityFeed .col .chat::-webkit-scrollbar {
+  width: 10px;
 }
 
-body .activityFeed .col #ex3::-webkit-scrollbar-thumb {
-  background-color: #b03c3f;
-  border-radius: 10px;
-  width: 16px;
-}
-
-body .activityFeed .col #ex3::-webkit-scrollbar-thumb:hover {
-  background-color: #bf4649;
-  border: 1px solid #333333;
-}
-
-body .activityFeed .col #ex3::-webkit-scrollbar-thumb:active {
-  background-color: #a6393d;
-  border: 1px solid #333333;
-}
-
-body .activityFeed .col #ex3::-webkit-scrollbar-track {
-  border: 1px solid gray;
+body .activityFeed .col .chat::-webkit-scrollbar-thumb {
+  background: #e5e5e5e3;
   border-radius: 10px;
 }
 
 body .activityFeed .col:nth-child(3n-1) {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+body .dialogues {
+  width: 1150px;
+  height: 812px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .dialogues .listUser {
+  width: 335px;
+  height: 100%;
+}
+
+body .dialogues .listUser .headerlistUser {
+  width: inherit;
+  display: table-cell;
+  height: 100px;
+  vertical-align: middle;
+  border-right: 1px solid yellow;
+  border-bottom: 1px solid yellow;
+}
+
+body .dialogues .listUser .headerlistUser p {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+}
+
+body .dialogues .listUser .headerlistUser .leftIcons {
+  float: right;
+}
+
+body .dialogues .listUser .userDialogList {
+  width: inherit;
+  display: table-cell;
+  height: 100px;
+  border-right: 1px solid yellow;
+  border-bottom: 1px solid yellow;
+}
+
+body .dialogues .dialog {
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
