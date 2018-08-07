@@ -671,12 +671,11 @@ body .dialogues .listUser {
 }
 
 body .dialogues .listUser .headerlistUser {
-  width: inherit;
-  display: table-cell;
   height: 100px;
-  vertical-align: middle;
+  line-height: 100px;
   border-right: 1px solid yellow;
   border-bottom: 1px solid yellow;
+  background-color: red;
 }
 
 body .dialogues .listUser .headerlistUser p {
@@ -689,12 +688,77 @@ body .dialogues .listUser .headerlistUser .leftIcons {
   float: right;
 }
 
+body .dialogues .listUser .leftIcons::after {
+  clear: both;
+}
+
 body .dialogues .listUser .userDialogList {
   width: inherit;
-  display: table-cell;
-  height: 100px;
+  height: 100%;
   border-right: 1px solid yellow;
+}
+
+body .dialogues .listUser .userDialogList .userDialog {
+  height: 100px;
+  width: inherit;
+  background-color: aqua;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom: 1px solid yellow;
+  position: relative;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .col {
+  display: block;
+  width: auto;
+  background-color: yellow;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .col p {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0px;
+  text-overflow: ellipsis;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .colTime {
+  position: absolute;
+  right: 0px;
+  padding: 15px;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .colTime .message {
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: red;
+}
+
+body .dialogues .listUser .userDialogList .userDialog img {
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body .dialogues .dialog {
