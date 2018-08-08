@@ -652,10 +652,12 @@ body .activityFeed .col:nth-child(3n-1) {
 body .dialogues {
   width: 1150px;
   height: 812px;
+  background-color: greenyellow;
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 15px;
   position: relative;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -666,16 +668,23 @@ body .dialogues {
 }
 
 body .dialogues .listUser {
-  width: 335px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: block;
   height: 100%;
+  width: 335px;
+  -webkit-box-shadow: 0 -50px 55px -49px black inset;
+          box-shadow: 0 -50px 55px -49px black inset;
+  z-index: 999999999;
 }
 
 body .dialogues .listUser .headerlistUser {
+  width: 335px;
+  display: block;
   height: 100px;
   line-height: 100px;
   border-right: 1px solid yellow;
   border-bottom: 1px solid yellow;
-  background-color: red;
 }
 
 body .dialogues .listUser .headerlistUser p {
@@ -688,20 +697,20 @@ body .dialogues .listUser .headerlistUser .leftIcons {
   float: right;
 }
 
-body .dialogues .listUser .leftIcons::after {
-  clear: both;
-}
-
 body .dialogues .listUser .userDialogList {
-  width: inherit;
+  width: 335px;
   height: 100%;
+  display: block;
+  z-index: 1;
   border-right: 1px solid yellow;
+  -webkit-box-shadow: 0 -50px 55px -49px black inset;
+          box-shadow: 0 -50px 55px -49px black inset;
 }
 
 body .dialogues .listUser .userDialogList .userDialog {
-  height: 100px;
-  width: inherit;
-  background-color: aqua;
+  z-index: 1;
+  height: 98px;
+  width: 100%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -717,29 +726,26 @@ body .dialogues .listUser .userDialogList .userDialog {
 }
 
 body .dialogues .listUser .userDialogList .userDialog .col {
-  display: block;
-  width: auto;
-  background-color: yellow;
+  z-index: 1;
+  display: inline-block;
+  max-width: 65%;
 }
 
 body .dialogues .listUser .userDialogList .userDialog .col p {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   padding: 0px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
   text-overflow: ellipsis;
 }
 
 body .dialogues .listUser .userDialogList .userDialog .colTime {
   position: absolute;
   right: 0px;
-  padding: 15px;
+  padding: 15px 0 15px 0;
   height: 100%;
+  width: 100px;
   text-align: center;
   margin: 0 auto;
 }
@@ -764,5 +770,63 @@ body .dialogues .listUser .userDialogList .userDialog img {
 body .dialogues .dialog {
   width: 100%;
   height: 100%;
+}
+
+body .dialogues .dialog .headerDialog {
+  height: 100px;
+  background-color: #97a4b1;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .dialogues .dialog .headerDialog p {
+  padding: 0px;
+  margin: 0px;
+}
+
+body .dialogues .dialog .headerDialog .leftIcons {
+  margin-left: auto;
+}
+
+body .dialogues .dialog .headerDialog .col {
+  display: inline-block;
+}
+
+body .dialogues .dialog .headerDialog .pic {
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .dialogues .dialog .messageDialog .textMesssageReceived {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 65%;
+}
+
+body .dialogues .dialog .messageDialog .textMesssageReceived img {
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
