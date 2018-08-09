@@ -5,24 +5,24 @@ $lightBlueColor: #ebf4fa;
 $whiteColor: #f9f9f9;
 $grayFontColor: #727272;
 $lightGrayFontColor: #e5e5e5;
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic');
 
-
-@mixin font ($color, $size, $weight) {
+@mixin font($color, $size, $weight) {
   font-family: 'Open Sans';
   color: $color;
   font-size: $size;
   font-weight: $weight;
 }
-@mixin avatarImg ($width, $height, $margin) {
+
+@mixin avatarImg($width, $height, $margin) {
   width: $width;
   height: $height;
   object-fit: cover;
   border-radius: 50%;
   margin: $margin;
 }
-@mixin btn ($width, $height, $margin, $fonColor) {
+
+@mixin btn($width, $height, $margin, $fonColor) {
   background-color: $fonColor;
   border-radius: 5px;
   width: $width;
@@ -34,69 +34,52 @@ $lightGrayFontColor: #e5e5e5;
   text-decoration: none;
 }
 
-@mixin triangle ($float, $margin, $Color) {
-    margin: $margin;
-    border: 5px solid transparent;
-    border-top: 5px solid  $Color;
-    width: 0;
-    height: 0;
-    float: $float;
+@mixin triangle($float, $margin, $Color) {
+  margin: $margin;
+  border: 5px solid transparent;
+  border-top: 5px solid $Color;
+  width: 0;
+  height: 0;
+  float: $float;
 }
 
-
-@mixin message ($Color) {
+@mixin messageChat($Color) {
   display: inline-block;
   position: relative;
   background-color: $Color;
-  // margin-left: 25px;
   max-width: 70%;
   border-radius: 15px;
+  z-index: 1000;
   p {
     margin: 0;
     text-align: justify;
     padding: 10px 20px 10px 20px;
   }
+
   &:before {
     content: "";
     position: absolute;
-    z-index: 134223;
+    z-index: 1000;
     bottom: 0px;
     height: 15px;
-    // border-right: 10px solid $Color;
-    // border-bottom-right-radius: 10px 7px;
-    // border-bottom-left-radius: 5px 2px;
-    // transform: translate(-5px, -2px);
   }
+
   &:after {
     content: "";
     position: absolute;
-    z-index: 1231312;
+    z-index: 1000;
     bottom: 0px;
     width: 10px;
     height: 25px;
     background: $whiteColor;
-    // border-bottom-right-radius: 16px 20px;
-    // transform: translate(-10px, -2px);
   }
 }
-
-
-
-
-
-
-
 
 div {
   box-sizing: border-box;
 }
 
-
-
-
 body {
-
-
   background-color: $fonColor;
 
   header {
@@ -106,7 +89,7 @@ body {
     border-radius: 15px;
     overflow: hidden;
     text-align: center;
-    @include font( $grayFontColor, 16px, 500);
+    @include font($grayFontColor, 16px, 500);
 
     .topBar {
       background-color: $blueColor;
@@ -138,7 +121,7 @@ body {
               #notiCounter {
                 border-radius: 2px;
                 background-color: #ff6161;
-                @include font( #f9f9f9, 12px, 900);
+                @include font(#f9f9f9, 12px, 900);
                 width: 16px;
                 line-height: 16px;
                 margin: 0 auto;
@@ -186,7 +169,7 @@ body {
             }
 
             .arrow-btn {
-              @include triangle( right, 20% 0 0 0, $whiteColor);
+              @include triangle(right, 20% 0 0 0, $whiteColor);
             }
           }
         }
@@ -232,8 +215,8 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
-    @include font( #667a90, 12px, 500);
-    
+    @include font(#667a90, 12px, 500);
+
     // @include font( #3f4f5f, 16px, 500);
     .profileStatusColumn {
       width: 480px;
@@ -243,15 +226,16 @@ body {
 
       img {
         display: block;
-        @include avatarImg( 100px, 100px, 0 25px 0 50px);
+        @include avatarImg(100px, 100px, 0 25px 0 50px);
       }
 
       .profileTitle {
         border-right: 1px solid $lightGrayFontColor;
+
         h3 {
           margin: 0;
           padding: 0;
-          @include font( #3f4f5f, 24px, 600);
+          @include font(#3f4f5f, 24px, 600);
         }
       }
     }
@@ -263,13 +247,16 @@ body {
       justify-content: space-between;
       margin: 0 35px 0 35px;
       align-items: center;
+
       .statsItems {
         display: inline-block;
+
         h2 {
-          @include font( #4d75a3, 22px, 600);
+          @include font(#4d75a3, 22px, 600);
           margin: 0px;
         }
-        p {  
+
+        p {
           margin: 0px;
         }
       }
@@ -283,13 +270,13 @@ body {
       justify-content: center;
 
       .fillBtn {
-        @include btn( 185px, 50px, 5px 0 5px 0, $blueColor);
-        @include font( $whiteColor, 16px, 500);
+        @include btn(185px, 50px, 5px 0 5px 0, $blueColor);
+        @include font($whiteColor, 16px, 500);
       }
 
       .generalBtn {
-        @include btn( 185px, 50px, 5px 0 5px 0, $whiteColor);
-        @include font( $blueColor, 16px, 600);
+        @include btn(185px, 50px, 5px 0 5px 0, $whiteColor);
+        @include font($blueColor, 16px, 600);
         border: 2px solid $blueColor;
       }
     }
@@ -302,7 +289,8 @@ body {
     height: 500px;
     margin: 0 auto;
     margin-top: 50px;
-    @include font( $grayFontColor, 15px, 500);
+    @include font($grayFontColor, 15px, 500);
+
     .col {
       overflow: hidden;
       background-color: $whiteColor;
@@ -319,9 +307,11 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+
         h2 {
-          @include font( black, 22px, 300);
+          @include font(black, 22px, 300);
         }
+
         img {
           width: 16px;
           height: 16px;
@@ -337,13 +327,13 @@ body {
           align-content: center;
           align-items: center;
           margin: 5px 25px 5px 25px;
+
           &:after {
             content: '';
             height: 100%;
             width: 50%;
             display: block;
             border-right: 1px solid $lightGrayFontColor;
-            
           }
         }
 
@@ -351,6 +341,7 @@ body {
           .link {
             color: $blueColor;
           }
+
           p {
             vertical-align: top;
             margin: 0px;
@@ -368,7 +359,6 @@ body {
         }
       }
 
-
       .footerFeeds {
         position: absolute;
         bottom: 0px;
@@ -378,12 +368,27 @@ body {
         align-items: center;
         justify-content: center;
         background-color: $lightBlueColor;
-        z-index: 999;
-        @include font( $blueColor, 12px, 600);
+        z-index: 999999;
+        @include font($blueColor, 12px, 600);
         text-transform: uppercase;
         .arrow-btn {
-          @include triangle( none, 0.5em 5px 0 5px, $blueColor);
+          @include triangle(none, 0.5em 5px 0 5px, $blueColor);
         }
+        .inputMessage {
+          background-color: $whiteColor;
+          height: 100%;
+          width: 100%;
+          padding: 0 20px 0 20px;
+          border-top: 1px solid $lightGrayFontColor;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .smile {
+            padding-right: 10px;
+            border-right: 2px solid $lightGrayFontColor;
+          }
+        }
+
       }
 
       .folowers {
@@ -399,10 +404,9 @@ body {
           z-index: 1;
 
           img {
-            @include avatarImg( 50px, 50px, 0);
+            @include avatarImg(50px, 50px, 0);
           }
 
- 
           .online {
             z-index: 10000;
             background-color: green;
@@ -417,21 +421,23 @@ body {
         }
 
         .folowersUser {
-          span {        
-            @include font( $grayFontColor, 16px, 600);
+          span {
+            @include font($grayFontColor, 16px, 600);
           }
         }
-        .FolowersBtn { 
+
+        .FolowersBtn {
           display: flex;
           justify-content: center;
           align-items: center;
           position: absolute;
           right: 25px;
           height: 100%;
+
           a {
             @include btn(52px, 30px, 0, $whiteColor);
             border: 1px solid #97a4b1;
-            @include font( #97a4b1, 14px, 600);
+            @include font(#97a4b1, 14px, 600);
           }
         }
       }
@@ -447,7 +453,7 @@ body {
           margin: 10px 15px 10px 25px;
 
           img {
-            @include avatarImg( 40px, 40px, 0);
+            @include avatarImg(40px, 40px, 0);
           }
         }
 
@@ -455,7 +461,8 @@ body {
           display: flex;
           flex-direction: row;
           align-self: center;
-          @include font( $whiteColor, 16px, 600);
+          @include font($whiteColor, 16px, 600);
+
           .online {
             display: flex;
             margin: 0 8px 0 8px;
@@ -483,121 +490,86 @@ body {
       .chat {
         overflow: auto;
         height: 100%;
-        @include font( $blueColor, 16px, 400);
+        @include font($blueColor, 16px, 400);
+
+        .dateDay {
+          display: inline-flex;
+          justify-content: center;
+          padding: 0 25px 0 25px;
+          width: 100%;
+          span {
+            margin: 0 15px 0 15px;
+            white-space: nowrap;
+            @include font($grayFontColor, 12px, 400);
+          }
+          &:before {
+            content: '';
+            width: 50%;
+            display: block;
+            margin-top: 0.5em;
+            border-top: 1px solid $lightGrayFontColor;
+          }
+          &:after {
+            content: '';
+            width: 50%;
+            display: block;
+            margin-top: 0.5em;
+            border-top: 1px solid $lightGrayFontColor;
+          }
+        }
+
         .message {
           .textMesssageReceived {
-            @include message($lightGrayFontColor);
+            @include messageChat($lightGrayFontColor);
             margin-left: 25px;
-&::before {
-    border-right: 10px solid $Color;
-    border-bottom-right-radius: 10px 7px;
-    border-bottom-left-radius: 5px 2px;
-    transform: translate(-5px, -2px);
-}
 
-&::after {
-            border-bottom-right-radius: 16px 20px;
-            transform: translate(-10px, -2px);
-}
+            &:before {
+              border-right: 10px solid $lightGrayFontColor;
+              border-bottom-right-radius: 10px 7px;
+              border-bottom-left-radius: 5px 2px;
+              transform: translate(-5px, -2px);
+            }
 
-
-
-            // display: inline-block;
-            // position: relative;
-            // background-color: $lightGrayFontColor;
-            // margin-left: 25px;
-            // max-width: 70%;
-            // border-radius: 15px;
-            // p {
-            //   margin: 0;
-            //   text-align: justify;
-            //   padding: 10px 20px 10px 20px;
-            // }
+            &:after {
+              border-bottom-right-radius: 16px 20px;
+              transform: translate(-10px, -2px);
+            }
           }
 
-          // .textMesssageReceived:before {
-          // //   content: "";
-          // //   position: absolute;
-          // //   z-index: 134223;
-          // //   bottom: 0px;
-          // //   height: 15px;
-          //   border-right: 10px solid $lightGrayFontColor;
-          //   border-bottom-right-radius: 10px 7px;
-          //   border-bottom-left-radius: 5px 2px;
-          //   transform: translate(-5px, -2px);
-          // }
-
-          // .textMesssageReceived:after {
-          //   content: "";
-          //   position: absolute;
-          //   z-index: 1231312;
-          //   bottom: 0px;
-          //   width: 10px;
-          //   height: 25px;
-          //   background: $whiteColor;
-          //   border-bottom-right-radius: 16px 20px;
-          //   transform: translate(-10px, -2px);
-          // }
-
-          .dateMesssage {
+          .dateMesssageLeft {
             display: inline-block;
             width: 100%;
+            padding: 0 25px 0 25px;
+            @include font($grayFontColor, 10px, 400);
+            // margin-left: 25px;
+          }
+
+          .dateMesssageRight {
+            display: inline-flex;
+            padding: 0 25px 0 25px;
+            width: 100%;
+            @include font($grayFontColor, 10px, 400);
+            justify-content: flex-end;
           }
 
           .textMesssageSent {
-            @include message(red);
-            // display: inline-block;
-            // position: relative;
-            // background-color: $lightBlueColor;
+            @include messageChat($lightBlueColor);
             margin-right: 25px;
             float: right;
-            // max-width: 70%;
-            // border-radius: 15px;
 
-            // p {
-            //   margin: 0;
-            //   text-align: justify;
-            //   padding: 10px 20px 10px 20px;
-            // }
             &::before {
+              left: 100%;
               border-left: 10px solid $lightBlueColor;
               border-bottom-left-radius: 10px 7px;
               border-bottom-right-radius: 5px 2px;
               transform: translate(-5px, -2px);
             }
-            
+
             &::after {
-              background: green;
+              left: 100%;
               border-bottom-left-radius: 20px 16px;
               transform: translate(0px, -2px);
             }
-          
-          }
-
-          .textMesssageSent:before {
-            // content: "";
-            // position: absolute;
-            // z-index: 134223;
-            // bottom: 0px;
-            // height: 15px;
-            // left: 100%;
-            // border-left: 10px solid $lightBlueColor;
-            // border-bottom-left-radius: 10px 7px;
-            // border-bottom-right-radius: 5px 2px;
-            // transform: translate(-5px, -2px);
-          }
-
-          .textMesssageSent:after {
-            // content: "";
-            // position: absolute;
-            // z-index: 1231312;
-            // left: 100%;
-            // bottom: 0px;
-            // width: 10px;
-            // height: 25px;
-            // background: $whiteColor;
-            // border-bottom-left-radius: 20px 16px;
-            // transform: translate(0px, -2px);
           }
         }
       }
@@ -621,7 +593,7 @@ body {
   .dialogues {
     width: 1150px;
     height: 812px;
-    background-color: greenyellow;
+    background-color: $whiteColor;
     margin: 0 auto;
     margin-top: 50px;
     border-radius: 15px;
@@ -629,30 +601,26 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: row;
+    @include font($grayFontColor, 15px, 500);
 
     .listUser {
-      // width: 335px;
-      // padding: 0;
-      // margin: 0;
-      box-sizing: content-box;
+
       display: block;
       height: 100%;
-      // overflow: hidden;
       width: 335px;
-      // width: 33%;
-      box-shadow: 0 -50px 55px -49px black inset;
-      z-index: 999999999;
-      // background-color: #ff6161;
+      box-shadow: 0 -50px 55px -49px $grayFontColor inset;
+      // z-index: 999999999;
       .headerlistUser {
         width: 335px;
         display: block;
         height: 100px;
-        // vertical-align:  middle;
+        padding: 0 25px 0 25px;
         line-height: 100px;
-        border-right: 1px solid yellow;
-        border-bottom: 1px solid yellow;
+        border-right: 1px solid $lightGrayFontColor;
+        border-bottom: 1px solid $lightGrayFontColor;
 
         p {
+          @include font($grayFontColor, 15px, 600);
           float: left;
           padding: 0px;
           margin: 0px;
@@ -660,6 +628,9 @@ body {
 
         .leftIcons {
           float: right;
+          img {
+            padding: 0 5px 0 5px;
+          }
         }
       }
 
@@ -668,74 +639,131 @@ body {
         height: 100%;
         display: block;
         z-index: 1;
-        // display:  table-cell;
-        // height:  100px;
-        border-right: 1px solid yellow;
-        // background-color: aqua;
+        border-right: 1px solid  $lightGrayFontColor;
         box-shadow: 0 -50px 55px -49px black inset;
 
         .userDialog {
           z-index: 1;
           height: 98px;
           width: 100%;
-          // background-color: aqua;
           display: inline-flex;
           flex-direction: row;
           align-items: center;
-          border-bottom: 1px solid yellow;
+          border-bottom: 1px solid  $lightGrayFontColor;
           position: relative;
+
 
           .col {
             z-index: 1;
             display: inline-block;
             max-width: 65%;
-
             p {
               padding: 0px;
               margin: 0px;
               white-space: nowrap;
               overflow: hidden;
-              padding: 5px;
               text-overflow: ellipsis;
             }
 
             .userName {
+              @include font(#3f4f5f, 15px, 700);
             }
           }
-          // .colTime::after {
-          //   background-color: red;
-          //   clear: both;
-          //   content: "";
-          //   width: auto;
-          //   height: 100%;
-          //   width: 100%;
 
-          // }
           .colTime {
-            position: absolute;
-            right: 0px;
-            padding: 15px 0 15px 0;
-            height: 100%;
-            width: 100px;
-            text-align: center;
-            margin: 0 auto;
 
-            .message {
-              height: 25px;
-              width: 25px;
-              margin: 0 auto;
-              border-radius: 5px;
-              background-color: red;
-            }
+          }
+
+
+
+
+
+
+
+
+//           .colTime {
+//             position: absolute;
+//             right: 0px;
+//             // height: 100%;
+//             display: block;
+//             // float: right;
+           
+//             // &:after {
+//             //   clear: both;
+//             // }
+//             width: 90px;
+//             // height: 100%;
+//             text-align: center;
+//             vertical-align: middle;
+//             .message {
+//               @include font(red, 12px, 600);
+//                 height: 25px;
+//                 width: 25px;
+//                 margin: 0 auto;
+//                 // margin-top: 50%;
+//               // height: 25px;
+//               // width: 25px;
+//               // border-radius: 5px;
+//               position: relative;
+
+//               // float: right;
+
+//               // height: 100%;
+//               // width: 100%;
+//               // z-index: 222;
+//               // margin: 0 auto;
+//               // text-align: center;
+//               // padding: 25px 0 25px 0;
+              
+              
+//               &:after {
+//                 content: '';
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 bottom: 0;
+//                 right: 0;
+//                 z-index: -1;
+//                 height: 25px;
+//                 width: 25px;
+//                 border-radius: 5px;
+//                 // text-align: center;
+//                 background-color: $blueColor;
+//                 display: inline-block;
+//                 vertical-align: middle;
+
+// //                 background-color: green;
+// //                 display: inline-block;
+//                 // vertical-align: middle;
+//                 // margin: 0 auto;
+//                 // position: absolute;
+//                 // margin: 0 auto;
+//                 // // top: 0;
+//                 // // left: 0;
+//                 // // bottom: 0;
+//                 // // right: 0;
+//                 // height: 25px;
+//                 // width: 25px;
+//                 // border-radius: 5px;
+//                 // z-index: -1;
+//                 // background-color: $blueColor;
+//                 // content: '';
+                
+//                 // position: absolute;
+//                 // top:0;
+//                 // z-index: -1;  /* to be below the parent element */
+//                 // display: inline-block;
+//                 // vertical-align: middle;
+//               }
+//             }
+            // .time {
+            //   margin: 15px 0 15px 0;
+            //   padding: 15px;
+            // }
           }
 
           img {
-            // margin: 5px 5px 5px 0px;
-            display: block;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
+            @include avatarImg(50px, 50px, 0 25px 0 25px);
           }
         }
       }
@@ -745,6 +773,7 @@ body {
       width: 100%;
       height: 100%;
       position: relative;
+
       .headerDialog {
         height: 100px;
         background-color: #97a4b1;
@@ -752,13 +781,16 @@ body {
         flex-direction: row;
         width: 100%;
         align-items: center;
+
         p {
           padding: 0px;
           margin: 0px;
         }
+
         .leftIcons {
           margin-left: auto;
         }
+
         .col {
           display: inline-block;
         }
@@ -773,9 +805,7 @@ body {
       }
 
       .messageDialog {
-
         .messageSent {
-
           display: inline-flex;
           flex-direction: row;
           width: 100%;
@@ -789,112 +819,113 @@ body {
             object-fit: cover;
           }
 
-          .textMesssageSent {
-            position: relative;
-            background-color: #f2f4f6;
-            margin-left: 25px;
-            max-width: 70%;
-            border-radius: 15px;
+          //   .textMesssageSent {
+          //     position: relative;
+          //     background-color: #f2f4f6;
+          //     margin-left: 25px;
+          //     max-width: 70%;
+          //     border-radius: 15px;
 
-            p {
-              margin: 0;
-              text-align: justify;
-              padding: 10px 20px 10px 20px;
-              .pic {
-                // display: flex;
-                // align-self: flex-end;
-                width: 150px;
-                height: 125px;
-                object-fit: cover;
-              }
-            }
-          }
+          //     p {
+          //       margin: 0;
+          //       text-align: justify;
+          //       padding: 10px 20px 10px 20px;
 
-          .textMesssageSent:before {
-            content: "";
-            position: absolute;
-            z-index: 134223;
-            bottom: 0px;
-            height: 15px;
-            border-right: 10px solid #f2f4f6;
-            border-bottom-right-radius: 10px 7px;
-            border-bottom-left-radius: 5px 2px;
-            transform: translate(-5px, -2px);
-          }
+          //       .pic {
+          //         // display: flex;
+          //         // align-self: flex-end;
+          //         width: 150px;
+          //         height: 125px;
+          //         object-fit: cover;
+          //       }
+          //     }
+          //   }
 
-          .textMesssageSent:after {
-            content: "";
-            position: absolute;
-            z-index: 1231312;
-            bottom: 0px;
-            width: 10px;
-            height: 25px;
-            background: #fff;
-            border-bottom-right-radius: 16px 20px;
-            transform: translate(-10px, -2px);
-          }
-        }
+          //   .textMesssageSent:before {
+          //     content: "";
+          //     position: absolute;
+          //     z-index: 134223;
+          //     bottom: 0px;
+          //     height: 15px;
+          //     border-right: 10px solid #f2f4f6;
+          //     border-bottom-right-radius: 10px 7px;
+          //     border-bottom-left-radius: 5px 2px;
+          //     transform: translate(-5px, -2px);
+          //   }
 
-        .messageReceived {
-          display: inline-flex;
-          flex-direction: row-reverse;
-          justify-content: right;
-          margin-right: 0 auto;
-          // align-items: center;
-          width: 100%;
+          //   .textMesssageSent:after {
+          //     content: "";
+          //     position: absolute;
+          //     z-index: 1231312;
+          //     bottom: 0px;
+          //     width: 10px;
+          //     height: 25px;
+          //     background: #fff;
+          //     border-bottom-right-radius: 16px 20px;
+          //     transform: translate(-10px, -2px);
+          //   }
+          // }
 
-          .avatar {
-            display: flex;
-            align-self: flex-end;
+          // .messageReceived {
+          //   display: inline-flex;
+          //   flex-direction: row-reverse;
+          //   justify-content: right;
+          //   margin-right: 0 auto;
+          //   // align-items: center;
+          //   width: 100%;
 
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-          }
+          //   .avatar {
+          //     display: flex;
+          //     align-self: flex-end;
+          //     border-radius: 50%;
+          //     width: 50px;
+          //     height: 50px;
+          //     object-fit: cover;
+          //   }
 
-          .textMesssageReceived {
-            // display: inline-block;
-            position: relative;
-            background-color: #f2f4f6;
-            margin-right: 25px;
+          //   .textMesssageReceived {
+          //     // display: inline-block;
+          //     position: relative;
+          //     background-color: #f2f4f6;
+          //     margin-right: 25px;
 
-            // margin: 1px 10px 1px 25px;
-            max-width: 70%;
-            border-radius: 15px;
-            p {
-              margin: 0;
-              text-align: justify;
-              padding: 10px 20px 10px 20px;
-            }
-          }
+          //     // margin: 1px 10px 1px 25px;
+          //     max-width: 70%;
+          //     border-radius: 15px;
 
-          .textMesssageReceived:before {
-                  content:"";
-                  position:absolute;
-                  z-index:134223;
-                  bottom: 0px;
-                  height: 15px;
-                   left: 100%;
-                  border-left: 10px solid #ebf4fa;
-                  border-bottom-left-radius:10px 7px;
-                  border-bottom-right-radius:5px 2px;
-                  transform:translate(-5px, -2px);
-          }
+          //     p {
+          //       margin: 0;
+          //       text-align: justify;
+          //       padding: 10px 20px 10px 20px;
+          //     }
+          //   }
 
-          .textMesssageReceived:after {
-                  content:"";
-                  position:absolute;
-                  z-index:1231312;
-                  left: 100%;
-                  bottom: 0px;
-                  width:10px;
-                  height:25px;
-                  background: #fff;
-                  // border-bottom-right-radius: 16px 20px;
-                  border-bottom-left-radius: 20px 16px;
-                  transform:translate( 0px, -2px);
-          }
+          //   .textMesssageReceived:before {
+          //     content: "";
+          //     position: absolute;
+          //     z-index: 134223;
+          //     bottom: 0px;
+          //     height: 15px;
+          //     left: 100%;
+          //     border-left: 10px solid #ebf4fa;
+          //     border-bottom-left-radius: 10px 7px;
+          //     border-bottom-right-radius: 5px 2px;
+          //     transform: translate(-5px, -2px);
+          //   }
+
+          //   .textMesssageReceived:after {
+          //     content: "";
+          //     position: absolute;
+          //     z-index: 1231312;
+          //     left: 100%;
+          //     bottom: 0px;
+          //     width: 10px;
+          //     height: 25px;
+          //     background: #fff;
+          //     // border-bottom-right-radius: 16px 20px;
+          //     border-bottom-left-radius: 20px 16px;
+          //     transform: translate(0px, -2px);
+          //   }
         }
       }
 
@@ -928,19 +959,21 @@ body {
             height: 47px;
             border-radius: 10px;
           }
+
           .smile {
             // align-items: center;
             // display: inline-flex;
             width: 100%;
             // display: inline-flex;
             color: #f9f9f9;
+
             p {
               display: inline-block;
               float: right;
               margin: 0;
               padding: 0;
-             
             }
+
             .arrow-btn {
               float: right;
               border: 5px solid transparent;
@@ -951,7 +984,6 @@ body {
           }
         }
       }
-
     }
   }
 }

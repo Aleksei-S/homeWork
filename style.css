@@ -402,7 +402,7 @@ body .activityFeed .col .footerFeeds {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #ebf4fa;
-  z-index: 999;
+  z-index: 999999;
   font-family: 'Open Sans';
   color: #4d75a3;
   font-size: 12px;
@@ -417,6 +417,28 @@ body .activityFeed .col .footerFeeds .arrow-btn {
   width: 0;
   height: 0;
   float: none;
+}
+
+body .activityFeed .col .footerFeeds .inputMessage {
+  background-color: #f9f9f9;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  border-top: 1px solid #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .activityFeed .col .footerFeeds .inputMessage .smile {
+  padding-right: 10px;
+  border-right: 2px solid #e5e5e5;
 }
 
 body .activityFeed .col .folowers {
@@ -586,13 +608,50 @@ body .activityFeed .col .chat {
   font-weight: 400;
 }
 
+body .activityFeed .col .chat .dateDay {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 25px 0 25px;
+  width: 100%;
+}
+
+body .activityFeed .col .chat .dateDay span {
+  margin: 0 15px 0 15px;
+  white-space: nowrap;
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+body .activityFeed .col .chat .dateDay:before {
+  content: '';
+  width: 50%;
+  display: block;
+  margin-top: 0.5em;
+  border-top: 1px solid #e5e5e5;
+}
+
+body .activityFeed .col .chat .dateDay:after {
+  content: '';
+  width: 50%;
+  display: block;
+  margin-top: 0.5em;
+  border-top: 1px solid #e5e5e5;
+}
+
 body .activityFeed .col .chat .message .textMesssageReceived {
   display: inline-block;
   position: relative;
   background-color: #e5e5e5;
-  margin-left: 25px;
   max-width: 70%;
   border-radius: 15px;
+  z-index: 1000;
+  margin-left: 25px;
 }
 
 body .activityFeed .col .chat .message .textMesssageReceived p {
@@ -604,7 +663,7 @@ body .activityFeed .col .chat .message .textMesssageReceived p {
 body .activityFeed .col .chat .message .textMesssageReceived:before {
   content: "";
   position: absolute;
-  z-index: 134223;
+  z-index: 1000;
   bottom: 0px;
   height: 15px;
 }
@@ -612,14 +671,11 @@ body .activityFeed .col .chat .message .textMesssageReceived:before {
 body .activityFeed .col .chat .message .textMesssageReceived:after {
   content: "";
   position: absolute;
-  z-index: 1231312;
+  z-index: 1000;
   bottom: 0px;
   width: 10px;
   height: 25px;
   background: #f9f9f9;
-  border-bottom-right-radius: 16px 20px;
-  -webkit-transform: translate(-10px, -2px);
-          transform: translate(-10px, -2px);
 }
 
 body .activityFeed .col .chat .message .textMesssageReceived:before {
@@ -630,18 +686,44 @@ body .activityFeed .col .chat .message .textMesssageReceived:before {
           transform: translate(-5px, -2px);
 }
 
-body .activityFeed .col .chat .message .dateMesssage {
+body .activityFeed .col .chat .message .textMesssageReceived:after {
+  border-bottom-right-radius: 16px 20px;
+  -webkit-transform: translate(-10px, -2px);
+          transform: translate(-10px, -2px);
+}
+
+body .activityFeed .col .chat .message .dateMesssageLeft {
   display: inline-block;
   width: 100%;
+  padding: 0 25px 0 25px;
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+body .activityFeed .col .chat .message .dateMesssageRight {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 25px 0 25px;
+  width: 100%;
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 10px;
+  font-weight: 400;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 body .activityFeed .col .chat .message .textMesssageSent {
   display: inline-block;
   position: relative;
-  background-color: red;
-  margin-left: 25px;
+  background-color: #ebf4fa;
   max-width: 70%;
   border-radius: 15px;
+  z-index: 1000;
   margin-right: 25px;
   float: right;
 }
@@ -655,7 +737,7 @@ body .activityFeed .col .chat .message .textMesssageSent p {
 body .activityFeed .col .chat .message .textMesssageSent:before {
   content: "";
   position: absolute;
-  z-index: 134223;
+  z-index: 1000;
   bottom: 0px;
   height: 15px;
 }
@@ -663,17 +745,14 @@ body .activityFeed .col .chat .message .textMesssageSent:before {
 body .activityFeed .col .chat .message .textMesssageSent:after {
   content: "";
   position: absolute;
-  z-index: 1231312;
+  z-index: 1000;
   bottom: 0px;
   width: 10px;
   height: 25px;
   background: #f9f9f9;
-  border-bottom-right-radius: 16px 20px;
-  -webkit-transform: translate(-10px, -2px);
-          transform: translate(-10px, -2px);
 }
 
-body .activityFeed .col .chat .message .textMesssageSent:before {
+body .activityFeed .col .chat .message .textMesssageSent::before {
   left: 100%;
   border-left: 10px solid #ebf4fa;
   border-bottom-left-radius: 10px 7px;
@@ -682,8 +761,8 @@ body .activityFeed .col .chat .message .textMesssageSent:before {
           transform: translate(-5px, -2px);
 }
 
-body .activityFeed .col .chat .message .textMesssageSent:after {
-  background: #f9f9f9;
+body .activityFeed .col .chat .message .textMesssageSent::after {
+  left: 100%;
   border-bottom-left-radius: 20px 16px;
   -webkit-transform: translate(0px, -2px);
           transform: translate(0px, -2px);
@@ -706,7 +785,7 @@ body .activityFeed .col:nth-child(3n-1) {
 body .dialogues {
   width: 1150px;
   height: 812px;
-  background-color: greenyellow;
+  background-color: #f9f9f9;
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 15px;
@@ -719,29 +798,35 @@ body .dialogues {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 body .dialogues .listUser {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
   display: block;
   height: 100%;
   width: 335px;
-  -webkit-box-shadow: 0 -50px 55px -49px black inset;
-          box-shadow: 0 -50px 55px -49px black inset;
-  z-index: 999999999;
+  -webkit-box-shadow: 0 -50px 55px -49px #727272 inset;
+          box-shadow: 0 -50px 55px -49px #727272 inset;
 }
 
 body .dialogues .listUser .headerlistUser {
   width: 335px;
   display: block;
   height: 100px;
+  padding: 0 25px 0 25px;
   line-height: 100px;
-  border-right: 1px solid yellow;
-  border-bottom: 1px solid yellow;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 body .dialogues .listUser .headerlistUser p {
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 15px;
+  font-weight: 600;
   float: left;
   padding: 0px;
   margin: 0px;
@@ -751,12 +836,16 @@ body .dialogues .listUser .headerlistUser .leftIcons {
   float: right;
 }
 
+body .dialogues .listUser .headerlistUser .leftIcons img {
+  padding: 0 5px 0 5px;
+}
+
 body .dialogues .listUser .userDialogList {
   width: 335px;
   height: 100%;
   display: block;
   z-index: 1;
-  border-right: 1px solid yellow;
+  border-right: 1px solid #e5e5e5;
   -webkit-box-shadow: 0 -50px 55px -49px black inset;
           box-shadow: 0 -50px 55px -49px black inset;
 }
@@ -775,7 +864,7 @@ body .dialogues .listUser .userDialogList .userDialog {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid yellow;
+  border-bottom: 1px solid #e5e5e5;
   position: relative;
 }
 
@@ -790,35 +879,59 @@ body .dialogues .listUser .userDialogList .userDialog .col p {
   margin: 0px;
   white-space: nowrap;
   overflow: hidden;
-  padding: 5px;
   text-overflow: ellipsis;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .col .userName {
+  font-family: 'Open Sans';
+  color: #3f4f5f;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 body .dialogues .listUser .userDialogList .userDialog .colTime {
   position: absolute;
   right: 0px;
-  padding: 15px 0 15px 0;
-  height: 100%;
-  width: 100px;
+  display: block;
+  width: 90px;
   text-align: center;
-  margin: 0 auto;
+  vertical-align: middle;
 }
 
 body .dialogues .listUser .userDialogList .userDialog .colTime .message {
+  font-family: 'Open Sans';
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
   height: 25px;
   width: 25px;
   margin: 0 auto;
+  position: relative;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .colTime .message:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  height: 25px;
+  width: 25px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #4d75a3;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 body .dialogues .listUser .userDialogList .userDialog img {
-  display: block;
-  border-radius: 50%;
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
+  margin: 0 25px 0 25px;
 }
 
 body .dialogues .dialog {
@@ -887,123 +1000,6 @@ body .dialogues .dialog .messageDialog .messageSent .avatar {
   height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-body .dialogues .dialog .messageDialog .messageSent .textMesssageSent {
-  position: relative;
-  background-color: #f2f4f6;
-  margin-left: 25px;
-  max-width: 70%;
-  border-radius: 15px;
-}
-
-body .dialogues .dialog .messageDialog .messageSent .textMesssageSent p {
-  margin: 0;
-  text-align: justify;
-  padding: 10px 20px 10px 20px;
-}
-
-body .dialogues .dialog .messageDialog .messageSent .textMesssageSent p .pic {
-  width: 150px;
-  height: 125px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-body .dialogues .dialog .messageDialog .messageSent .textMesssageSent:before {
-  content: "";
-  position: absolute;
-  z-index: 134223;
-  bottom: 0px;
-  height: 15px;
-  border-right: 10px solid #f2f4f6;
-  border-bottom-right-radius: 10px 7px;
-  border-bottom-left-radius: 5px 2px;
-  -webkit-transform: translate(-5px, -2px);
-          transform: translate(-5px, -2px);
-}
-
-body .dialogues .dialog .messageDialog .messageSent .textMesssageSent:after {
-  content: "";
-  position: absolute;
-  z-index: 1231312;
-  bottom: 0px;
-  width: 10px;
-  height: 25px;
-  background: #fff;
-  border-bottom-right-radius: 16px 20px;
-  -webkit-transform: translate(-10px, -2px);
-          transform: translate(-10px, -2px);
-}
-
-body .dialogues .dialog .messageDialog .messageReceived {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  margin-right: 0 auto;
-  width: 100%;
-}
-
-body .dialogues .dialog .messageDialog .messageReceived .avatar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived {
-  position: relative;
-  background-color: #f2f4f6;
-  margin-right: 25px;
-  max-width: 70%;
-  border-radius: 15px;
-}
-
-body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived p {
-  margin: 0;
-  text-align: justify;
-  padding: 10px 20px 10px 20px;
-}
-
-body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived:before {
-  content: "";
-  position: absolute;
-  z-index: 134223;
-  bottom: 0px;
-  height: 15px;
-  left: 100%;
-  border-left: 10px solid #ebf4fa;
-  border-bottom-left-radius: 10px 7px;
-  border-bottom-right-radius: 5px 2px;
-  -webkit-transform: translate(-5px, -2px);
-          transform: translate(-5px, -2px);
-}
-
-body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived:after {
-  content: "";
-  position: absolute;
-  z-index: 1231312;
-  left: 100%;
-  bottom: 0px;
-  width: 10px;
-  height: 25px;
-  background: #fff;
-  border-bottom-left-radius: 20px 16px;
-  -webkit-transform: translate(0px, -2px);
-          transform: translate(0px, -2px);
 }
 
 body .dialogues .dialog .dialogFooter {
