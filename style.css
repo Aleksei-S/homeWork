@@ -1,32 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic");
-@font-face {
-  font-family: "OpenSans";
-  src: url(./webfonts/fa-brands-400.ttf);
-  src: url(./webfonts/fa-brands-400.eot);
-  src: url(./webfonts/fa-brands-400.woff);
-}
-
 div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  font-size: 20px;
   background-color: #e9e8e4;
 }
 
 body header {
   width: 1150px;
   height: 150px;
-  background-color: red;
   margin: 0 auto;
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
+  font-family: 'Open Sans';
+  color: #727272;
   font-size: 16px;
-  color: #97a4b1;
-  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
 }
 
 body header .topBar {
@@ -64,9 +56,10 @@ body header .topBar .leftTopBarMenu nav ul li .logoTopBar {
 body header .topBar .leftTopBarMenu nav ul li #notiCounter {
   border-radius: 2px;
   background-color: #ff6161;
-  font-size: 12px;
-  font-weight: bold;
+  font-family: 'Open Sans';
   color: #f9f9f9;
+  font-size: 12px;
+  font-weight: 900;
   width: 16px;
   line-height: 16px;
   margin: 0 auto;
@@ -112,7 +105,7 @@ body header .topBar nav ul li .avatar {
 }
 
 body header .topBar nav ul li .arrow-btn {
-  margin-top: 20%;
+  margin: 20% 0 0 0;
   border: 5px solid transparent;
   border-top: 5px solid #f9f9f9;
   width: 0;
@@ -160,6 +153,13 @@ body .profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Open Sans';
+  color: #667a90;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 body .profile .profileStatusColumn {
@@ -171,14 +171,12 @@ body .profile .profileStatusColumn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 body .profile .profileStatusColumn img {
-  width: 120px;
-  height: 120px;
+  display: block;
+  width: 100px;
+  height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
@@ -189,37 +187,43 @@ body .profile .profileStatusColumn .profileTitle {
   border-right: 1px solid #e5e5e5;
 }
 
+body .profile .profileStatusColumn .profileTitle h3 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  color: #3f4f5f;
+  font-size: 24px;
+  font-weight: 600;
+}
+
 body .profile .profileStats {
   width: 400px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-body .profile .profileStats .statsItems {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 35px 0 35px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+body .profile .profileStats .statsItems {
+  display: inline-block;
 }
 
 body .profile .profileStats .statsItems h2 {
-  padding: 0px;
+  font-family: 'Open Sans';
+  color: #4d75a3;
+  font-size: 22px;
+  font-weight: 600;
   margin: 0px;
 }
 
 body .profile .profileStats .statsItems p {
-  padding: 0px;
   margin: 0px;
 }
 
@@ -253,8 +257,10 @@ body .profile .profileButtons .fillBtn {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  font-weight: bold;
+  font-family: 'Open Sans';
   color: #f9f9f9;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 body .profile .profileButtons .generalBtn {
@@ -262,7 +268,6 @@ body .profile .profileButtons .generalBtn {
   border-radius: 5px;
   width: 185px;
   height: 50px;
-  border: 1px solid #38546d;
   margin: 5px 0 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -274,9 +279,11 @@ body .profile .profileButtons .generalBtn {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  text-align: center;
-  font-weight: bold;
+  font-family: 'Open Sans';
   color: #4d75a3;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #4d75a3;
 }
 
 body .activityFeed {
@@ -289,11 +296,15 @@ body .activityFeed {
   height: 500px;
   margin: 0 auto;
   margin-top: 50px;
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 body .activityFeed .col {
   overflow: hidden;
-  background-color: white;
+  background-color: #f9f9f9;
   height: 100%;
   width: calc((100% - 100px) / 3);
   border-radius: 15px;
@@ -301,6 +312,7 @@ body .activityFeed .col {
 }
 
 body .activityFeed .col .titleFeed {
+  padding: 5px 25px 0px 25px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -312,35 +324,24 @@ body .activityFeed .col .titleFeed {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 body .activityFeed .col .titleFeed h2 {
-  margin: 10px 0 10px 0;
-  padding: 0px;
+  font-family: 'Open Sans';
+  color: black;
+  font-size: 22px;
+  font-weight: 300;
 }
 
-body .activityFeed .col .titleFeed .titleLeft {
-  margin: 0 25px 0 25px;
-}
-
-body .activityFeed .col .titleFeed .titleRight {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 25px 0 25px;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body .activityFeed .col .titleFeed .titleRight img {
-  width: 20px;
-  height: 20px;
+body .activityFeed .col .titleFeed img {
+  width: 16px;
+  height: 16px;
 }
 
 body .activityFeed .col .feeds {
@@ -357,11 +358,19 @@ body .activityFeed .col .feeds .columnFeedIcon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 25px 0 25px;
+  margin: 5px 25px 5px 25px;
 }
 
-body .activityFeed .col .feeds .columnUser {
-  font-size: 16px;
+body .activityFeed .col .feeds .columnFeedIcon:after {
+  content: '';
+  height: 100%;
+  width: 50%;
+  display: block;
+  border-right: 1px solid #e5e5e5;
+}
+
+body .activityFeed .col .feeds .columnUser .link {
+  color: #4d75a3;
 }
 
 body .activityFeed .col .feeds .columnUser p {
@@ -381,16 +390,33 @@ body .activityFeed .col .feeds .columnUser .feedPhotos img {
 body .activityFeed .col .footerFeeds {
   position: absolute;
   bottom: 0px;
+  height: 50px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #4d75a3;
-  overflow: hidden;
-  z-index: 9999999;
+  background-color: #ebf4fa;
+  z-index: 999;
+  font-family: 'Open Sans';
+  color: #4d75a3;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+body .activityFeed .col .footerFeeds .arrow-btn {
+  margin: 0.5em 5px 0 5px;
+  border: 5px solid transparent;
+  border-top: 5px solid #4d75a3;
+  width: 0;
+  height: 0;
+  float: none;
 }
 
 body .activityFeed .col .folowers {
@@ -403,6 +429,9 @@ body .activityFeed .col .folowers {
       -ms-flex-direction: row;
           flex-direction: row;
   position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .activityFeed .col .folowers .folowersImage {
@@ -412,11 +441,12 @@ body .activityFeed .col .folowers .folowersImage {
 }
 
 body .activityFeed .col .folowers .folowersImage img {
-  border-radius: 50%;
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
+  margin: 0;
 }
 
 body .activityFeed .col .folowers .folowersImage .online {
@@ -431,19 +461,11 @@ body .activityFeed .col .folowers .folowersImage .online {
   border: 2px solid white;
 }
 
-body .activityFeed .col .folowers .folowersUser {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 12px;
+body .activityFeed .col .folowers .folowersUser span {
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 body .activityFeed .col .folowers .FolowersBtn {
@@ -453,8 +475,6 @@ body .activityFeed .col .folowers .FolowersBtn {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -465,11 +485,10 @@ body .activityFeed .col .folowers .FolowersBtn {
 
 body .activityFeed .col .folowers .FolowersBtn a {
   background-color: #f9f9f9;
-  font-size: 12px;
   border-radius: 5px;
   width: 52px;
-  height: 27px;
-  border: 1px solid #97a4b1;
+  height: 30px;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,9 +499,11 @@ body .activityFeed .col .folowers .FolowersBtn a {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  text-align: center;
-  font-weight: bold;
+  border: 1px solid #97a4b1;
+  font-family: 'Open Sans';
   color: #97a4b1;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 body .activityFeed .col .titleChat {
@@ -503,11 +524,12 @@ body .activityFeed .col .titleChat .titlePicture {
 }
 
 body .activityFeed .col .titleChat .titlePicture img {
-  border-radius: 50%;
   width: 40px;
   height: 40px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
+  margin: 0;
 }
 
 body .activityFeed .col .titleChat .titleNameUser {
@@ -520,6 +542,10 @@ body .activityFeed .col .titleChat .titleNameUser {
           flex-direction: row;
   -ms-flex-item-align: center;
       align-self: center;
+  font-family: 'Open Sans';
+  color: #f9f9f9;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 body .activityFeed .col .titleChat .titleNameUser .online {
@@ -529,7 +555,7 @@ body .activityFeed .col .titleChat .titleNameUser .online {
   margin: 0 8px 0 8px;
   -ms-flex-item-align: center;
       align-self: center;
-  background-color: green;
+  background-color: #f9f9f9;
   width: 11px;
   height: 11px;
   border-radius: 50%;
@@ -554,12 +580,16 @@ body .activityFeed .col .titleChat .titleBtn img {
 body .activityFeed .col .chat {
   overflow: auto;
   height: 100%;
+  font-family: 'Open Sans';
+  color: #4d75a3;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 body .activityFeed .col .chat .message .textMesssageReceived {
   display: inline-block;
   position: relative;
-  background-color: #f2f4f6;
+  background-color: #e5e5e5;
   margin-left: 25px;
   max-width: 70%;
   border-radius: 15px;
@@ -577,11 +607,6 @@ body .activityFeed .col .chat .message .textMesssageReceived:before {
   z-index: 134223;
   bottom: 0px;
   height: 15px;
-  border-right: 10px solid #f2f4f6;
-  border-bottom-right-radius: 10px 7px;
-  border-bottom-left-radius: 5px 2px;
-  -webkit-transform: translate(-5px, -2px);
-          transform: translate(-5px, -2px);
 }
 
 body .activityFeed .col .chat .message .textMesssageReceived:after {
@@ -591,10 +616,18 @@ body .activityFeed .col .chat .message .textMesssageReceived:after {
   bottom: 0px;
   width: 10px;
   height: 25px;
-  background: #fff;
+  background: #f9f9f9;
   border-bottom-right-radius: 16px 20px;
   -webkit-transform: translate(-10px, -2px);
           transform: translate(-10px, -2px);
+}
+
+body .activityFeed .col .chat .message .textMesssageReceived:before {
+  border-right: 10px solid #e5e5e5;
+  border-bottom-right-radius: 10px 7px;
+  border-bottom-left-radius: 5px 2px;
+  -webkit-transform: translate(-5px, -2px);
+          transform: translate(-5px, -2px);
 }
 
 body .activityFeed .col .chat .message .dateMesssage {
@@ -605,11 +638,12 @@ body .activityFeed .col .chat .message .dateMesssage {
 body .activityFeed .col .chat .message .textMesssageSent {
   display: inline-block;
   position: relative;
-  background-color: #ebf4fa;
-  margin-right: 25px;
-  float: right;
+  background-color: red;
+  margin-left: 25px;
   max-width: 70%;
   border-radius: 15px;
+  margin-right: 25px;
+  float: right;
 }
 
 body .activityFeed .col .chat .message .textMesssageSent p {
@@ -624,6 +658,22 @@ body .activityFeed .col .chat .message .textMesssageSent:before {
   z-index: 134223;
   bottom: 0px;
   height: 15px;
+}
+
+body .activityFeed .col .chat .message .textMesssageSent:after {
+  content: "";
+  position: absolute;
+  z-index: 1231312;
+  bottom: 0px;
+  width: 10px;
+  height: 25px;
+  background: #f9f9f9;
+  border-bottom-right-radius: 16px 20px;
+  -webkit-transform: translate(-10px, -2px);
+          transform: translate(-10px, -2px);
+}
+
+body .activityFeed .col .chat .message .textMesssageSent:before {
   left: 100%;
   border-left: 10px solid #ebf4fa;
   border-bottom-left-radius: 10px 7px;
@@ -633,14 +683,7 @@ body .activityFeed .col .chat .message .textMesssageSent:before {
 }
 
 body .activityFeed .col .chat .message .textMesssageSent:after {
-  content: "";
-  position: absolute;
-  z-index: 1231312;
-  left: 100%;
-  bottom: 0px;
-  width: 10px;
-  height: 25px;
-  background: #fff;
+  background: #f9f9f9;
   border-bottom-left-radius: 20px 16px;
   -webkit-transform: translate(0px, -2px);
           transform: translate(0px, -2px);
