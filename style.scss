@@ -227,7 +227,7 @@ body {
       img {
         display: flex;
         @include avatarImg(100px, 100px, 0 25px 0 50px);
-        margin-left: 50px;
+        // margin-left: 50px;
        flex-basis: 175px;
       }
 
