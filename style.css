@@ -171,18 +171,23 @@ body .profile .profileStatusColumn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
 }
 
 body .profile .profileStatusColumn img {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100px;
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
-  margin: 0;
+  margin: 0 25px 0 50px;
   margin-left: 50px;
-  margin-right: 25px;
+  -ms-flex-preferred-size: 175px;
+      flex-basis: 175px;
 }
 
 body .profile .profileStatusColumn .profileTitle {
