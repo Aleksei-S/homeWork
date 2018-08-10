@@ -226,12 +226,14 @@ body {
 
       img {
         display: block;
-        @include avatarImg(100px, 100px, 0 25px 0 50px);
+        @include avatarImg(100px, 100px, 0 );
+        margin-left: 50px;
+        margin-right: 25px;
       }
 
       .profileTitle {
+        display: block;
         border-right: 1px solid $lightGrayFontColor;
-
         h3 {
           margin: 0;
           padding: 0;
