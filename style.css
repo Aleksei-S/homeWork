@@ -644,6 +644,30 @@ body .activityFeed .col .chat .dateDay:after {
   border-top: 1px solid #e5e5e5;
 }
 
+body .activityFeed .col .chat .error::after {
+  content: "!";
+  z-index: 9999;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  text-align: center;
+  vertical-align: top;
+  top: 0;
+  left: 25px;
+  border-radius: 50%;
+  font-family: 'Open Sans';
+  color: #f9f9f9;
+  font-size: 9px;
+  font-weight: 600;
+  background-color: #ff6161;
+  -webkit-transform: translate(0, -5px);
+          transform: translate(0, -5px);
+}
+
+body .activityFeed .col .chat .message {
+  position: relative;
+}
+
 body .activityFeed .col .chat .message .textMesssageReceived {
   display: inline-block;
   position: relative;
@@ -871,7 +895,7 @@ body .dialogues .listUser .userDialogList .userDialog {
 body .dialogues .listUser .userDialogList .userDialog .col {
   z-index: 1;
   display: inline-block;
-  max-width: 65%;
+  max-width: 50%;
 }
 
 body .dialogues .listUser .userDialogList .userDialog .col p {
@@ -892,35 +916,42 @@ body .dialogues .listUser .userDialogList .userDialog .col .userName {
 body .dialogues .listUser .userDialogList .userDialog .colTime {
   position: absolute;
   right: 0px;
-  display: block;
   width: 90px;
+  z-index: 2;
+  height: 100%;
+  padding: 25px 0 25px 0;
   text-align: center;
-  vertical-align: middle;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .colTime .time {
+  white-space: nowrap;
 }
 
 body .dialogues .listUser .userDialogList .userDialog .colTime .message {
   font-family: 'Open Sans';
-  color: red;
+  color: #f9f9f9;
   font-size: 12px;
   font-weight: 600;
-  height: 25px;
-  width: 25px;
-  margin: 0 auto;
   position: relative;
+  height: 25px;
 }
 
-body .dialogues .listUser .userDialogList .userDialog .colTime .message:after {
+body .dialogues .listUser .userDialogList .userDialog .colTime .message:before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
   height: 25px;
   width: 25px;
   border-radius: 5px;
   background-color: #4d75a3;
+  margin: 0 auto;
+}
+
+body .dialogues .listUser .userDialogList .userDialog .colTime .message:after {
+  content: '';
+  height: 25px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -942,7 +973,6 @@ body .dialogues .dialog {
 
 body .dialogues .dialog .headerDialog {
   height: 100px;
-  background-color: #97a4b1;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -954,6 +984,7 @@ body .dialogues .dialog .headerDialog {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 body .dialogues .dialog .headerDialog p {
@@ -961,8 +992,20 @@ body .dialogues .dialog .headerDialog p {
   margin: 0px;
 }
 
+body .dialogues .dialog .headerDialog .userName {
+  font-family: 'Open Sans';
+  color: #3f4f5f;
+  font-size: 15px;
+  font-weight: 700;
+}
+
 body .dialogues .dialog .headerDialog .leftIcons {
   margin-left: auto;
+  margin-right: 25px;
+}
+
+body .dialogues .dialog .headerDialog .leftIcons img {
+  padding: 0 5px 0 5px;
 }
 
 body .dialogues .dialog .headerDialog .col {
@@ -970,12 +1013,12 @@ body .dialogues .dialog .headerDialog .col {
 }
 
 body .dialogues .dialog .headerDialog .avatar {
-  display: block;
-  border-radius: 50%;
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
+  margin: 0 25px 0 25px;
 }
 
 body .dialogues .dialog .messageDialog .messageSent {
@@ -995,34 +1038,216 @@ body .dialogues .dialog .messageDialog .messageSent .avatar {
   display: flex;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border-radius: 50%;
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 50%;
+  margin: 0 0 0 20px;
 }
 
-body .dialogues .dialog .dialogFooter {
-  width: 100%;
-  height: 100px;
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent {
+  display: inline-block;
+  position: relative;
+  background-color: #e5e5e5;
+  max-width: 70%;
+  border-radius: 15px;
+  z-index: 1000;
+  margin-left: 25px;
+}
+
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent p {
+  margin: 0;
+  text-align: justify;
+  padding: 10px 20px 10px 20px;
+}
+
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent:before {
+  content: "";
   position: absolute;
+  z-index: 1000;
   bottom: 0px;
-  border-top: 1px solid yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  height: 15px;
+}
+
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent:after {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  bottom: 0px;
+  width: 10px;
+  height: 25px;
+  background: #f9f9f9;
+}
+
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent:before {
+  border-right: 10px solid #e5e5e5;
+  border-bottom-right-radius: 10px 7px;
+  border-bottom-left-radius: 5px 2px;
+  -webkit-transform: translate(-5px, -2px);
+          transform: translate(-5px, -2px);
+}
+
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent:after {
+  border-bottom-right-radius: 16px 20px;
+  -webkit-transform: translate(-10px, -2px);
+          transform: translate(-10px, -2px);
+}
+
+body .dialogues .dialog .messageDialog .messageSent .textMesssageSent .pic {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 150px;
+  height: 125px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-body .dialogues .dialog .dialogFooter .button {
+body .dialogues .dialog .messageDialog .messageReceived {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin-right: 0 auto;
+  width: 100%;
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived {
+  display: inline-block;
+  position: relative;
+  background-color: #ebf4fa;
+  max-width: 70%;
+  border-radius: 15px;
+  z-index: 1000;
+  margin-right: 25px;
+  float: right;
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived p {
+  margin: 0;
+  text-align: justify;
+  padding: 10px 20px 10px 20px;
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived:before {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  bottom: 0px;
+  height: 15px;
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived:after {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  bottom: 0px;
+  width: 10px;
+  height: 25px;
+  background: #f9f9f9;
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived::before {
+  left: 100%;
+  border-left: 10px solid #ebf4fa;
+  border-bottom-left-radius: 10px 7px;
+  border-bottom-right-radius: 5px 2px;
+  -webkit-transform: translate(-5px, -2px);
+          transform: translate(-5px, -2px);
+}
+
+body .dialogues .dialog .messageDialog .messageReceived .textMesssageReceived::after {
+  left: 100%;
+  border-bottom-left-radius: 20px 16px;
+  -webkit-transform: translate(0px, -2px);
+          transform: translate(0px, -2px);
+}
+
+body .dialogues .dialog .messageDialog .dateMesssageLeft {
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 12px;
+  font-weight: 600;
+  float: left;
+  margin-left: 90px;
+}
+
+body .dialogues .dialog .messageDialog .dateMesssageRight {
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 12px;
+  font-weight: 600;
+  float: right;
+  margin-right: 90px;
+}
+
+body .dialogues .dialog .dialogFooter {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid #e5e5e5;
+}
+
+body .dialogues .dialog .dialogFooter .footer {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 20px 0 15px 15px;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+body .dialogues .dialog .dialogFooter .footer input {
+  display: block;
+  width: 620px;
+  height: 45px;
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  color: #727272;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+body .dialogues .dialog .dialogFooter .footer .button {
+  padding: 0 10px 0 10px;
   background-color: #4d75a3;
   border-radius: 5px;
-  width: 121px;
-  height: 50px;
-  margin: 5px 0 5px 0;
+  width: 100px;
+  height: 45px;
+  margin: 0 15px 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1033,32 +1258,54 @@ body .dialogues .dialog .dialogFooter .button {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  font-weight: bold;
+  font-family: 'Open Sans';
   color: #f9f9f9;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-body .dialogues .dialog .dialogFooter .footer input {
-  width: 640px;
-  height: 47px;
-  border-radius: 10px;
-}
-
-body .dialogues .dialog .dialogFooter .footer .smile {
+body .dialogues .dialog .dialogFooter .smile {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 165px 0 15px;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  color: #f9f9f9;
+  position: relative;
 }
 
-body .dialogues .dialog .dialogFooter .footer .smile p {
-  display: inline-block;
+body .dialogues .dialog .dialogFooter .smile img {
+  padding: 0 5px 0 5px;
+}
+
+body .dialogues .dialog .dialogFooter .smile .smileRight {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   float: right;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body .dialogues .dialog .dialogFooter .smile .smileRight p {
+  font-family: 'Open Sans';
+  color: #4d75a3;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
 
-body .dialogues .dialog .dialogFooter .footer .smile .arrow-btn {
-  float: right;
+body .dialogues .dialog .dialogFooter .smile .smileRight .arrow-btn {
   border: 5px solid transparent;
-  border-top: 5px solid red;
+  border-top: 5px solid #4d75a3;
   width: 0;
   height: 0;
 }
