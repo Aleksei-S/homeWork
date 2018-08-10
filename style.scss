@@ -223,16 +223,18 @@ body {
       height: 100%;
       display: flex;
       align-items: center;
-      flex-basis: auto;
+      // flex-basis: auto;
+      background-color: aqua;
       img {
         display: flex;
         @include avatarImg(100px, 100px, 0 25px 0 50px);
         // margin-left: 50px;
+        flex-grow: 1;
        flex-basis: 175px;
       }
 
       .profileTitle {
-  
+        flex-grow: 1;
         display: block;
         border-right: 1px solid $lightGrayFontColor;
         h3 {
