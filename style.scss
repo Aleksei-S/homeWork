@@ -224,7 +224,7 @@ body {
       display: flex;
       align-items: center;
       // flex-basis: auto;
-      background-color: aqua;
+      // background-color: aqua;
       img {
         display: flex;
         @include avatarImg(100px, 100px, 0 25px 0 50px);
