@@ -180,10 +180,13 @@ body .profile .profileStatusColumn img {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
-  margin: 0 25px 0 50px;
+  margin: 0;
+  margin-left: 50px;
+  margin-right: 25px;
 }
 
 body .profile .profileStatusColumn .profileTitle {
+  display: block;
   border-right: 1px solid #e5e5e5;
 }
 
